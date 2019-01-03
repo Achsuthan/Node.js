@@ -1,5 +1,3 @@
-function sayHello(){
-	console.log("Hello World")
-}
 
-sayHello()
+const logger = require('./logger');
+logger.endPoint('This is API call');
