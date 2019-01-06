@@ -1,0 +1,7 @@
+before we start npm we have to run a command 
+        'npm init'
+it will ask some questions 
+
+instead of running 'npm init', we can run 
+        'npm init --yes'
+it wond't ask any question
