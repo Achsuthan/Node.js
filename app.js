@@ -4,7 +4,39 @@ const eventManagement = require('./emitter')
 logger.endPoint('This is API call');
 
 /*
-    This is event package
+    This is file module 
+ */
+
+ //always use async task, beacse in the sync will block the process until finish the task
+ const fs = require('fs');
+
+ const files = fs.readdirSync('./')
+ console.log(files);
+
+
+ //by using async task get all the files from a directories 
+fs.readdir('./', function(err,files) {
+    if (err){
+        console.log("Error : "+ err);
+    }
+    else {
+        console.log(files);
+    }
+})
+
+//above one we can use the arrow function,
+fs.readdir('./',(err,files)=>{
+    if(err){
+        console.log("Error "+err)
+    }
+    else {
+        console.log(files)
+    }
+})
+
+
+/*
+    This is event module with noraml function
  */
 
 //handling the event management
@@ -24,26 +56,7 @@ emitter.emit('Event','values')
 eventManagement.EventEmitterFunc('Test Event', 'Values of paramters')
 
 
-/*
-    This is file package 
- */
 
- //always use async task, beacse in the sync will block the process until finish the task
- const fs = require('fs');
-
- const files = fs.readdirSync('./')
- console.log(files);
-
-
- //by using async task get all the files from a directories 
-fs.readdir('./', function(err,files) {
-    if (err){
-        console.log("Error : "+ err);
-    }
-    else {
-        console.log(files);
-    }
-})
 
  
 
