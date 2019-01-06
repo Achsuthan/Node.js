@@ -1,7 +1,10 @@
-before we start npm we have to run a command 
+<>   before we start npm we have to run a command 
         'npm init'
-it will ask some questions 
+    it will ask some questions 
 
-instead of running 'npm init', we can run 
+<>  instead of running 'npm init', we can run 
         'npm init --yes'
-it wond't ask any question
+    it wond't ask any question
+
+<> when we run npm install <package_name> in the package.json file will put that pacakge_name under dependancies 
+
