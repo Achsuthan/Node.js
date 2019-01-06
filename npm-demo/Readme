@@ -8,3 +8,6 @@
 
 <> when we run npm install <package_name> in the package.json file will put that pacakge_name under dependancies 
 
+<> if we want to ignore the npm_module we have to create .gitignore file and add the node_modules
+
+
