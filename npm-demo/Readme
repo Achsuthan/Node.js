@@ -15,4 +15,15 @@
 <> list down dependencies of specific node_moduel
         'npm view <package_name> dependancies'
 
+<> install a specific version of node_module 
+        'npm i <package_name>@<version_number>'
+
+<> to update the npm package 
+        'npm update'
+
+<> if we want to check the new updates in node_module throught terminal, first we have to install
+        'sudo npm i -g npm-check-updates'
+    then we an use the 
+        'npm-check-updates' command to check the update globally 
+
 
