@@ -24,6 +24,12 @@
 <> if we want to check the new updates in node_module throught terminal, first we have to install
         'sudo npm i -g npm-check-updates'
     then we an use the 
-        'npm-check-updates' command to check the update globally 
+        'npm-check-updates' command to check the update 
+
+<> install the dev dependancy we have to use 
+        'npm i <package_name> --save dev'
+
+<> uninstall a package 
+        'npm uninstall <package_name>'
 
 
