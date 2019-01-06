@@ -10,4 +10,9 @@
 
 <> if we want to ignore the npm_module we have to create .gitignore file and add the node_modules
 
+<> 'npm list' will give all the node_modules
+
+<> list down dependencies of specific node_moduel
+        'npm view <package_name> dependancies'
+
 
