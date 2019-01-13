@@ -102,14 +102,6 @@ app.delete('/api/course/:id',(req,res)=>{
 })
 
 
-//get the port form envirment if not asign it as a static vlaue 3000
-const port = process.env.PORT || 3000
-app.listen(port, ()=>{
-    console.log(`Listening on port ${port}...`);
-})
-
-
-
 /*
     Middleware function
 */
@@ -123,3 +115,29 @@ app.use((req,res,next) => { //next is used to pass the flow form middle ware to 
  */
 
  app.use(logger)
+
+
+ /**
+  * How to run a spesific funtion in development 
+  */
+
+  //app.get("env") will give bydefault development
+  //we can change the env variable through terminal 
+  //EXPORT NODE_ENV=production
+  //once i run the above line app.get("env") will give the production
+
+if (app.get("env") === "development"){
+    console.log("Hello Development")
+}
+else {
+    console.log("Hello Production")
+}
+
+
+//get the port form envirment if not asign it as a static vlaue 3000
+const port = process.env.PORT || 3000
+app.listen(port, ()=>{
+    console.log(`Listening on port ${port}...`);
+})
+
+
