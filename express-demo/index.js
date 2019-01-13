@@ -1,3 +1,4 @@
+const config = require("config")
 const express = require('express')
 const app = express()
 const logger = require("./logger")
@@ -133,6 +134,18 @@ else {
     console.log("Hello Production")
 }
 
+/**
+ * Config package 
+ */
+// default.json when if  NODE_ENV is not set this application will get the details get it from this file 
+// development.json when if the NODE_ENV is development
+// production.json when if the NODE_ENV is production
+console.log("Application name "+config.get("name"))
+console.log("Mail Server "+ config.get("mail.host"))
+
+
+//if you want to store password don't store it in the config json files, store it in the env 
+//For example if you want to store the password "export password=123" it will store the password as a env variable 
 
 //get the port form envirment if not asign it as a static vlaue 3000
 const port = process.env.PORT || 3000
