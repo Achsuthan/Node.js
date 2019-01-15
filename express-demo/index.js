@@ -1,7 +1,16 @@
-const config = require("config")
+const config = require("config") // this is used to stroe the values in the production and development 
+const startupDebugger = require('debug')('app:startup') //this is the debugger module; use it when we have devmode and 'app:startup' is a function name which will use it later for call the dubugger function
+//we have to set the env variable "DEBUG" variable or we can set the DEBUG when run the file "DEBUG=<NAME> node <FILE_NAME.js>"
+const dbDebugger = require('debug')('app:db')
 const express = require('express')
 const app = express()
 const logger = require("./logger")
+
+app.set('view engine','pug')
+app.set('views','./views')
+
+
+
 //enable json to body
 app.use(express.json()) //build in middleware function in node.js
 app.use(express.static("public")) //this static middleware used to store the public files like css image etc..
@@ -22,7 +31,7 @@ const courses = [
 ]
 
 app.get('/',(req,res)=>{
-    res.send('Hello World!')
+    res.render('index',{title: "MyExpress APP", message:"this is a message"})
 })
 
 app.get('/api/course', (req,res)=>{
@@ -108,6 +117,7 @@ app.delete('/api/course/:id',(req,res)=>{
 */
 app.use((req,res,next) => { //next is used to pass the flow form middle ware to restofthem
     console.log("Login")
+    startupDebugger('Login middleware function')
     next()
 })
 
