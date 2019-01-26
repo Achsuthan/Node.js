@@ -71,7 +71,7 @@ function getUser(id, callback){
 
 function getRepoName(username,callback){
     setTimeout(()=>{
-        console.log(username)
+        console.log("Getting repo of "+ username)
         callback(["repo1","repo2","repo3","repo4"])
     },2000)
 }
